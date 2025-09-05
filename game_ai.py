@@ -54,7 +54,7 @@ def ai_play(board):
         number_of_simulations, search_length = get_search_params(move_number)
         board, valid_game = ai_move(board, number_of_simulations, search_length)
         if valid_game:
-            board = add_two(board)
+            board = add_new_tile(board)
         if check_for_win(board):
             valid_game = False
         print(board)
@@ -68,7 +68,7 @@ def ai_plot(move_func):
     for _ in range(SAMPLE_COUNT):
         print('thing is ', _)
         board = initialize_game()
-        game_is_win = ai(board)
+        game_is_win = move_func(board)
         final_scores.append(game_is_win)
     all_counts = np.zeros(11)
     unique, counts = np.unique(np.array(final_scores), return_counts=True)

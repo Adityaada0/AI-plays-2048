@@ -88,6 +88,7 @@ def fixed_move(board):
 
 def random_move(board):
     move_made = False
+    score = 0
     move_order = [move_right, move_up, move_down, move_left]
     while not move_made and len(move_order) > 0:
         move_index = np.random.randint(0, len(move_order))
