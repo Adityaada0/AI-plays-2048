@@ -113,4 +113,5 @@ class Display(Frame):
                 self.matrix = game_functions.add_new_tile(self.matrix)
                 self.draw_grid_cells()
                 move_made = False
-gamegrid = Display()
+if __name__ == "__main__":
+    gamegrid = Display()
